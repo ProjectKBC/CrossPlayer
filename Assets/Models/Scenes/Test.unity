@@ -1501,8 +1501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da011f08ff7341208ccd1cc43dff37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShot: {fileID: 1990743660211674, guid: dc3fe1ea6859640b8a153a43ae7f98c5, type: 2}
-  jiki: {fileID: 709489124}
+  bullet: {fileID: 1990743660211674, guid: dc3fe1ea6859640b8a153a43ae7f98c5, type: 2}
+  muzzle: {fileID: 709489124}
   speed: 1000
 --- !u!1 &761730691
 GameObject:
