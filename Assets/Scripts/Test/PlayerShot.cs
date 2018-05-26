@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShot : MonoBehaviour {
+    // x:取りあえず弾が出るだけです
+    
+    public GameObject bullet; // 弾のprefab
 
-    // bullet prefab
-    public GameObject bullet;
+    public Transform muzzle; // 弾の発射点
 
-    // 弾丸発射点
-    public Transform muzzle;
+    public float speed = 1000; // 弾の速度
 
-    // 弾丸の速度
-    public float speed = 1000;
+    int timeCount;
 
     void Start()
     {
@@ -20,18 +20,24 @@ public class PlayerShot : MonoBehaviour {
 
     void Update()
     {
-        // z キーが押された時
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            // 弾丸の複製
-            GameObject bullets = GameObject.Instantiate(bullet) as GameObject;
+        const int SHOT_INTERVAL = 3; // ショットの間隔
 
-            Vector3 force;
-            force = this.gameObject.transform.up * speed;
-            // Rigidbodyに力を加えて発射
-            bullets.GetComponent<Rigidbody>().AddForce(force);
-            // 弾丸の位置を調整
-            bullets.transform.position = muzzle.position;
-        }
+        // z キーを押している間
+        if (Input.GetKey(KeyCode.Z))
+        {
+            timeCount++;
+           
+            if (timeCount > SHOT_INTERVAL)
+            {
+                timeCount = 0;
+
+                GameObject bullets = GameObject.Instantiate(bullet) as GameObject; // 弾の複製
+
+                Vector3 force;
+                force = this.gameObject.transform.up * speed;
+                bullets.GetComponent<Rigidbody>().AddForce(force); // Rigidbodyに力を加えて発射
+                bullets.transform.position = muzzle.position; // 弾の発射点を更新
+            }
+        } else { timeCount = SHOT_INTERVAL; } // 発射してない時は次弾装填
     }
 }

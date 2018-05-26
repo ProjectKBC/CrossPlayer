@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e21428e51184cfbaa8bcdb8fc0dbe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1588243435498868, guid: ed1d9007d42aa45ddbf7431c7091b1ed, type: 2}
+  bullet: {fileID: 1421621883212656, guid: ae69d7b0701954af39867b60165f3465, type: 2}
   muzzle: {fileID: 128022374}
   speed: 1000
 --- !u!1 &274572794
@@ -1602,7 +1602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e21428e51184cfbaa8bcdb8fc0dbe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 1588243435498868, guid: ed1d9007d42aa45ddbf7431c7091b1ed, type: 2}
   muzzle: {fileID: 400002, guid: d63041fc415f85842917a6744bbec340, type: 3}
   speed: 1000
 --- !u!1 &761730691
