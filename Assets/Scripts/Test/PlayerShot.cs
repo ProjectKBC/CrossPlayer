@@ -11,7 +11,9 @@ public class PlayerShot : MonoBehaviour {
 
     public float speed = 1000; // 弾の速度
 
-    int timeCount;
+    public int shotInterval = 3; // ショットの間隔
+
+    int timeCount; // 弾の間隔を管理
 
     void Start()
     {
@@ -20,24 +22,24 @@ public class PlayerShot : MonoBehaviour {
 
     void Update()
     {
-        const int SHOT_INTERVAL = 3; // ショットの間隔
 
         // z キーを押している間
         if (Input.GetKey(KeyCode.Z))
         {
+            Vector3 force;
             timeCount++;
-           
-            if (timeCount > SHOT_INTERVAL)
+
+            if (timeCount > shotInterval)
             {
                 timeCount = 0;
 
                 GameObject bullets = GameObject.Instantiate(bullet) as GameObject; // 弾の複製
 
-                Vector3 force;
                 force = this.gameObject.transform.up * speed;
                 bullets.GetComponent<Rigidbody>().AddForce(force); // Rigidbodyに力を加えて発射
                 bullets.transform.position = muzzle.position; // 弾の発射点を更新
             }
-        } else { timeCount = SHOT_INTERVAL; } // 発射してない時は次弾装填
+            else { timeCount = shotInterval; } // 発射してない時は次弾装填
+        }
     }
 }
