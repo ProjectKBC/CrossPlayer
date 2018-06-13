@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerShot : MonoBehaviour {
     // x:取りあえず弾が出るだけです
     
-    public GameObject bullet; // 弾のprefab
+    public GameObject normalBullet; // 通常弾のprefab
+
+    public GameObject specialBullet; // 特殊弾のprefab
 
     public Transform muzzle; // 弾の発射点
 
@@ -15,9 +17,13 @@ public class PlayerShot : MonoBehaviour {
 
     int timeCount; // 弾の間隔を管理
 
+    float playerSpeed;
+
+    float startTime;
+
     void Start()
     {
-
+        playerSpeed = GetComponent<PlayerTest>().speed;
     }
 
     void Update()
@@ -33,13 +39,30 @@ public class PlayerShot : MonoBehaviour {
             {
                 timeCount = 0;
 
-                GameObject bullets = GameObject.Instantiate(bullet) as GameObject; // 弾の複製
+                GameObject normalBullets = GameObject.Instantiate(normalBullet) as GameObject; // 弾の複製
 
                 force = this.gameObject.transform.up * speed;
-                bullets.GetComponent<Rigidbody>().AddForce(force); // Rigidbodyに力を加えて発射
-                bullets.transform.position = muzzle.position; // 弾の発射点を更新
+                normalBullets.GetComponent<Rigidbody>().AddForce(force); // Rigidbodyに力を加えて発射
+                normalBullets.transform.position = muzzle.position; // 弾の発射点を更新
             }
             else { timeCount = shotInterval; } // 発射してない時は次弾装填
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Vector3 force;
+            startTime = Time.time;
+
+            GameObject specialBullets = GameObject.Instantiate(specialBullet) as GameObject; // 弾の複製
+
+            GetComponent<PlayerTest>().speed = 0;
+
+            //force = this.gameObject.transform.up * speed;
+            //specialBullets.GetComponent<Rigidbody>().AddForce(force); // Rigidbodyに力を加えて発射
+            specialBullets.transform.position = muzzle.position; // 弾の発射点を更新
+        }
+        if (Time.time - startTime > 0.5)
+        {
+            GetComponent<PlayerTest>().speed = playerSpeed;
         }
     }
 }

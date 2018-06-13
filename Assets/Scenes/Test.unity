@@ -440,7 +440,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e21428e51184cfbaa8bcdb8fc0dbe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1286560871197768, guid: b47c388d50cf541a8885a8da0ae7f6f4, type: 2}
+  normalBullet: {fileID: 1588243435498868, guid: ed1d9007d42aa45ddbf7431c7091b1ed,
+    type: 2}
+  specialBullet: {fileID: 1590508022759306, guid: b47c388d50cf541a8885a8da0ae7f6f4,
+    type: 2}
   muzzle: {fileID: 128022376}
   speed: 1000
   shotInterval: 3
@@ -1603,7 +1606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e21428e51184cfbaa8bcdb8fc0dbe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1588243435498868, guid: ed1d9007d42aa45ddbf7431c7091b1ed, type: 2}
+  normalBullet: {fileID: 0}
+  specialBullet: {fileID: 0}
   muzzle: {fileID: 400002, guid: d63041fc415f85842917a6744bbec340, type: 3}
   speed: 1000
   shotInterval: 3
