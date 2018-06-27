@@ -47,6 +47,7 @@ public class PlayerShot : MonoBehaviour {
             }
             else { timeCount = shotInterval; } // 発射してない時は次弾装填
         }
+        // x:特殊ショットのつもりです
         if (Input.GetKeyDown(KeyCode.X))
         {
             Vector3 force;
