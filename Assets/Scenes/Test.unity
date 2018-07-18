@@ -677,7 +677,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1918265047034496, guid: aa9b66126761f42bca476325667ad877, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa9b66126761f42bca476325667ad877, type: 2}
@@ -2861,11 +2861,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: 1
   player1_HP: 200
-  player1_SPD: 2
-  player1_shot_SPD: 0
-  player1_shot_interval: 0
-  player1_NS_ATK: 5
-  player1_SS_ATK: 20
+  player1_SPD: 0.2
+  player2: 0
+  player2_HP: 100
+  player2_SPD: 0.3
 --- !u!4 &1300397549
 Transform:
   m_ObjectHideFlags: 0
@@ -3366,7 +3365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1460763354
 Transform:
   m_ObjectHideFlags: 0
