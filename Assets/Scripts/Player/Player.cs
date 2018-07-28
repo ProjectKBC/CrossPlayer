@@ -7,9 +7,16 @@ public class Player : MonoBehaviour
     public int HP;
     public float SPD;
 
+    [System.NonSerialized]
+    public bool isStun = false;
+
     private void Update()
     {
-        Move();
+        if(!isStun)
+        {
+            Move();
+        }
+
     }
 
     private void Move()
@@ -31,4 +38,5 @@ public class Player : MonoBehaviour
                 break;
         }
     }
+
 }

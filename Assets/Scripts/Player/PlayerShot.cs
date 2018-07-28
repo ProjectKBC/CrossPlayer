@@ -11,19 +11,19 @@ public class PlayerShot : MonoBehaviour {
 
     public Transform muzzle; // 弾の発射点
 
-    public float speed = 1000; // 弾の速度
+    public float shotSPD = 1000; // 弾の速度
 
     public int shotInterval = 3; // ショットの間隔
 
     int timeCount; // 弾の間隔を管理
 
-    float playerSpeed;
+    float playerSPD;
 
     float startTime;
 
     void Start()
     {
-        playerSpeed = GetComponent<PlayerTest>().speed;
+        playerSPD = this.GetComponent<Player>().SPD;
     }
 
     void Update()
@@ -39,23 +39,24 @@ public class PlayerShot : MonoBehaviour {
             {
                 timeCount = 0;
 
-                GameObject normalBullets = GameObject.Instantiate(normalBullet) as GameObject; // 弾の複製
+                GameObject normalBullets = Instantiate(normalBullet) as GameObject; // 弾の複製
 
-                force = this.gameObject.transform.up * speed;
+                force = this.transform.up * shotSPD;
                 normalBullets.GetComponent<Rigidbody>().AddForce(force); // Rigidbodyに力を加えて発射
                 normalBullets.transform.position = muzzle.position; // 弾の発射点を更新
             }
             else { timeCount = shotInterval; } // 発射してない時は次弾装填
         }
+
         // x:特殊ショットのつもりです
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Vector3 force;
+            //Vector3 force;
             startTime = Time.time;
 
-            GameObject specialBullets = GameObject.Instantiate(specialBullet) as GameObject; // 弾の複製
+            GameObject specialBullets = Instantiate(specialBullet) as GameObject; // 弾の複製
 
-            GetComponent<PlayerTest>().speed = 0;
+            this.GetComponent<Player>().SPD = 0;
 
             //force = this.gameObject.transform.up * speed;
             //specialBullets.GetComponent<Rigidbody>().AddForce(force); // Rigidbodyに力を加えて発射
@@ -63,7 +64,7 @@ public class PlayerShot : MonoBehaviour {
         }
         if (Time.time - startTime > 0.5)
         {
-            GetComponent<PlayerTest>().speed = playerSpeed;
+            this.GetComponent<Player>().SPD = playerSPD;
         }
     }
 }
