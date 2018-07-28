@@ -29,8 +29,6 @@ public class VeronicaShot : MonoBehaviour
                 normalBullets.GetComponent<VeronicaNB>().shooter = plTag;
                 normalBullets.transform.position = this.transform.position;
                 isExist = true;
-
-                normalBullets.SetActive(true);
             }
 
         }

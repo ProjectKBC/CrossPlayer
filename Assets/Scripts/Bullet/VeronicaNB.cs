@@ -7,6 +7,8 @@ public class VeronicaNB : MonoBehaviour {
 
     private void Update()
     {
+
+        // z キーを押している間
         if (Input.GetKey(KeyCode.Z))
         {
             
@@ -22,6 +24,7 @@ public class VeronicaNB : MonoBehaviour {
             }
         }
 
+        // z キーを離した
         if (Input.GetKeyUp(KeyCode.Z))
         {
             Destroy(gameObject);
