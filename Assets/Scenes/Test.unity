@@ -1571,6 +1571,9 @@ MonoBehaviour:
   muzzle: {fileID: 400002, guid: d63041fc415f85842917a6744bbec340, type: 3}
   shotSPD: 1000
   shotInterval: 3
+  timeCount: 0
+  playerSPD: 0
+  startTime: 0
 --- !u!1 &761730691
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,11 +2277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1: 1
-  player1_HP: 200
-  player1_SPD: 0.2
   player2: 0
-  player2_HP: 100
-  player2_SPD: 0.3
 --- !u!4 &1300397549
 Transform:
   m_ObjectHideFlags: 0

@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4500106504001944}
-  - component: {fileID: 114137337519697940}
+  - component: {fileID: 114807169448571028}
   m_Layer: 0
   m_Name: veronica
   m_TagString: Untagged
@@ -270,7 +270,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1324022603642090}
   m_Mesh: {fileID: 4300000, guid: e31b19df09415d241bf2ea13d6a96a74, type: 3}
---- !u!114 &114137337519697940
+--- !u!114 &114807169448571028
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,9 +278,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1828557690939590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b03ded406c8246e7be477e19654b095, type: 3}
+  m_Script: {fileID: 11500000, guid: d26e45a0715f24fe4a9d9ff1a95999f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalBullet: {fileID: 1588243435498868, guid: ed1d9007d42aa45ddbf7431c7091b1ed,
+  HP: 100
+  SPD: 0.3
+  normalBullet: {fileID: 1611373919145570, guid: e97e5dcb6139c4129bf7c2abc3bc11e6,
     type: 2}
-  shotInterval: 3
