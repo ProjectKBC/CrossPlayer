@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1611373919145570}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.6500006, y: 0, z: -5.25}
+  m_LocalPosition: {x: 4.9500003, y: 0, z: 0.14999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a830a7fd092c4b64a026d7d70b7eca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shooter: Player2
+  shooter: none
 --- !u!198 &198636078819662994
 ParticleSystem:
   m_ObjectHideFlags: 1

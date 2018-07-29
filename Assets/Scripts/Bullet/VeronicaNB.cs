@@ -6,38 +6,26 @@ public class VeronicaNB : MonoBehaviour
 {
     public string shooter;
 
+    private void Awake()
+    {
+        this.shooter = "";
+    }
+
     private void Update()
     {
-        switch (shooter)
+        switch (this.shooter)
         {
             case "Player1":
-                // z キーを押している間
-                if (Input.GetKey(KeyCode.Z))
-                {
-                    this.transform.position = PlayerManager.gameObjectPL1.transform.position;
-                }
-
-                // z キーを離した
-                if (Input.GetKeyUp(KeyCode.Z))
-                {
-                    Destroy(gameObject);
-                }
+                this.transform.position = PlayerManager.gameObjectPL1.transform.position;
                 break;
 
             case "Player2":
-                // m キーを押している間
-                if (Input.GetKey(KeyCode.M))
-                {
-                    this.transform.position = PlayerManager.gameObjectPL2.transform.position;
-                }
+                this.transform.position = PlayerManager.gameObjectPL2.transform.position;
+                break;
 
-                // m キーを離した
-                if (Input.GetKeyUp(KeyCode.M))
-                {
-                    Destroy(gameObject);
-                }
+            case "none":
+                Destroy(gameObject);
                 break;
         }
-
     }
 }

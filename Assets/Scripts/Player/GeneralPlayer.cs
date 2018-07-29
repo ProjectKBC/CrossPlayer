@@ -17,7 +17,7 @@ public class GeneralPlayer : MonoBehaviour
     private void Update()
     {
         Move();
-        Shot();
+        NormalShot();
     }
 
     private void Move()
@@ -40,13 +40,13 @@ public class GeneralPlayer : MonoBehaviour
         }
     }
 
-    private void Shot()
+    private void NormalShot()
     {
         switch (this.tag)
         {
             case "Player1":
-                // m キーを押している間
-                if (Input.GetKey(KeyCode.M))
+                // z キーを押している間
+                if (Input.GetKey(KeyCode.Z))
                 {
                     timeCount++;
                     if (timeCount > shotInterval)
@@ -61,8 +61,8 @@ public class GeneralPlayer : MonoBehaviour
                 break;
 
             case "Player2":
-                // z キーを押している間
-                if (Input.GetKey(KeyCode.Z))
+                // m キーを押している間
+                if (Input.GetKey(KeyCode.M))
                 {
                     timeCount++;
                     if (timeCount > shotInterval)
