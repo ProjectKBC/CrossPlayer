@@ -2273,12 +2273,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49de101118119491aa542e116ec26f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: 0
-  player1_HP: 100
-  player1_SPD: 0.3
-  player2: 1
-  player2_HP: 200
-  player2_SPD: 0.2
+  player1: 1
+  player1_HP: 200
+  player1_SPD: 0.2
+  player2: 0
+  player2_HP: 100
+  player2_SPD: 0.3
 --- !u!4 &1300397549
 Transform:
   m_ObjectHideFlags: 0
