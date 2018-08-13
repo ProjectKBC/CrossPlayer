@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class VeronicaPlayer : MonoBehaviour
 {
-    // x:もしかしてPlayerのスクリプトの時点で分ければ良いのでは？？
     public int HP = 100;
     public float SPD = 0.3f;
 
-    public GameObject normalBullet; // 通常弾のプレハブ
+    public GameObject normalBullet;
     private VeronicaNB mNormalBullet;
 
-    bool nbIsExist = false; // 弾が既にあるかの判定
+    public const float SHOT_MAX_LP = 5.0f;
 
-    public const float SHOT_MAX_LP = 5.0f; // 弾のライフポイントの最大値
-
-    public float shotLP; // 弾のライフポイント
+    public float shotLP;
 
     private void OnValidate()
     {
@@ -54,16 +51,17 @@ public class VeronicaPlayer : MonoBehaviour
         switch (this.tag)
         {
             case "Player1":
+                // z キーを押した時
+                if (Input.GetKeyDown(KeyCode.Z) && shotLP > 0)
+                {
+                    normalBullet.transform.position = this.transform.position;
+                    mNormalBullet = Instantiate(normalBullet).GetComponent<VeronicaNB>(); // 通常弾のキャッシュを生成
+                    mNormalBullet.shooter = this.tag;
+                }
+
                 // z キーを押している間
                 if (Input.GetKey(KeyCode.Z) && shotLP > 0)
                 {
-                    if (!nbIsExist)
-                    {
-						normalBullet.transform.position = this.transform.position;
-                        mNormalBullet = Instantiate(normalBullet).GetComponent<VeronicaNB>(); // 通常弾のキャッシュを生成
-                        mNormalBullet.shooter = this.tag;
-                        nbIsExist = true;
-                    }
                     shotLP -= Time.deltaTime; // 弾を撃ってる間は弾のライフポイントが減る
                 }
 
@@ -72,21 +70,21 @@ public class VeronicaPlayer : MonoBehaviour
                 {
                     shotLP += Time.deltaTime; // 弾を撃ってない間は弾のライフポイントが増える
                     mNormalBullet.shooter = "none";
-                    nbIsExist = false;
                 }
                 break;
 
             case "Player2":
+                // m キーを押した時
+                if (Input.GetKeyDown(KeyCode.M) && shotLP > 0)
+                {
+                    normalBullet.transform.position = this.transform.position;
+                    mNormalBullet = Instantiate(normalBullet).GetComponent<VeronicaNB>(); // 通常弾のキャッシュを生成
+                    mNormalBullet.shooter = this.tag;
+                }
+
                 // m キーを押している間
                 if (Input.GetKey(KeyCode.M) && shotLP > 0)
                 {
-                    if (!nbIsExist)
-                    {
-                        normalBullet.transform.position = this.transform.position;
-                        mNormalBullet = Instantiate(normalBullet).GetComponent<VeronicaNB>(); // 通常弾のキャッシュを生成
-                        mNormalBullet.shooter = this.tag;
-                        nbIsExist = true;
-                    }
                     shotLP -= Time.deltaTime; // 弾を撃ってる間は弾のライフポイントが減る
                 }
 
@@ -95,7 +93,6 @@ public class VeronicaPlayer : MonoBehaviour
                 {
                     shotLP += Time.deltaTime; // 弾を撃ってない間は弾のライフポイントが増える
                     mNormalBullet.shooter = "none";
-                    nbIsExist = false;
                 }
                 break;
         }
