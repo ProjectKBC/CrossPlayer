@@ -1,4 +1,4 @@
-﻿using UnityEditorInternal;
+﻿//using UnityEditorInternal;
 using UnityEngine;
 
 public class NoaCameraManager : NoaSingletonMonoBehaviour<NoaCameraManager>
